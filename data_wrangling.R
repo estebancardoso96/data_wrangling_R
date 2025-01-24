@@ -12,6 +12,9 @@ registro$Nombre <- str_squish(registro$Nombre)
 # Ver los duplicados (no incluye la primera aparición)
 registro[duplicated(registro), ]
 
+# Ver los duplicados por Nombre e id
+registro %>% group_by(Nombre, id) %>% filter(n()>1)
+
 # Elimino las filas enteramente duplicadas
 registro <- registro %>% distinct()
 
@@ -23,3 +26,5 @@ registro %>% distinct(id, fecha,.keep_all = TRUE)
 
 
 registro <- registro %>% distinct(id, .keep_all = TRUE)
+
+
