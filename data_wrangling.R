@@ -16,11 +16,9 @@ registro[duplicated(registro), ]
 registro <- registro %>% distinct()
 
 # Ver que tomo la primera aparición de id
-
 registro %>% distinct(id, .keep_all = TRUE)
 
 # Ver que tomo la primera aparición de id y fecha (como la fecha es distinta no elimina la última fila)
-
 registro %>% distinct(id, fecha,.keep_all = TRUE)
 
 
