@@ -7,4 +7,9 @@ registro <- data.frame('Nombre'=c('Jorge', 'Fiorella', 'Hector ', 'Gabriela', 'J
                           'fecha'=c(202401, 202401, 202401, 202401, 202401, 202402))
 
 
-registro
+# Elimino espacios a los costados
+registro$Nombre <- str_squish(registro$Nombre)
+
+# Elimino las filas enteramente duplicadas
+registro <- registro %>% distinct()
+
